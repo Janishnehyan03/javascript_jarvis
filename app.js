@@ -108,6 +108,57 @@ function takeCommand(message) {
     speak("Now I am in Darul Huda Islamic University, Kerala, India.");
   } else if (message.includes("how are you?" || "how are you")) {
     speak("Alhamdu lillah, I am fine.");
+  } else if (
+    message.includes(
+      "what is ramadan?" ||
+        "what is Ramadan?" ||
+        "what is ramadan" ||
+        "what is Ramadan"
+    )
+  ) {
+    speak(
+      "Ramadan is the ninth month of the Islamic lunar calendar. It is a month of fasting, prayer, reflection, and community. Muslims around the world observe fasting from dawn to sunset during this month."
+    );
+  } else if (
+    message.includes(
+      "what is zakat?" || "what is Zakat?" || "what is zakat" || "what is Zakat"
+    )
+  ) {
+    speak(
+      "Zakat is one of the Five Pillars of Islam. It is a form of almsgiving, where Muslims are required to donate a specific portion of their wealth, usually 2.5%, to help those in need and support charitable causes."
+    );
+  } else if (
+    message.includes(
+      "what is Hajj?" || "what is hajj?" || "what is Hajj" || "what is hajj"
+    )
+  ) {
+    speak(
+      "Hajj is the pilgrimage to the holy city of Mecca, which is one of the Five Pillars of Islam. It is an obligation for every physically and financially able Muslim to perform Hajj at least once in their lifetime."
+    );
+  } else if (
+    message.includes(
+      "what is the significance of Jummah?" || "why is Jummah important?"
+    )
+  ) {
+    speak(
+      "Jummah, or Friday, is considered the holiest day in Islam. Muslims gather for the congregational Friday prayers, listen to the Khutbah (sermon), and engage in additional acts of worship. It holds great significance in the life of a Muslim."
+    );
+  } else if (
+    message.includes(
+      "what is the meaning of Bismillah?" || "translate Bismillah"|| "translate bismillah." ||"Translate Bismillah"
+    )
+  ) {
+    speak(
+      "Bismillah means 'In the name of Allah.' It is recited by Muslims before starting any task or action to seek Allah's blessings and guidance."
+    );
+  } else if (
+    message.includes(
+      "what are the Five Pillars of Islam?" || "list the Five Pillars of Islam"
+    )
+  ) {
+    speak(
+      "The Five Pillars of Islam are Shahada (declaration of faith), Salah (prayer), Zakat (charity), Sawm (fasting during Ramadan), and Hajj (pilgrimage to Mecca). These pillars form the foundation of a Muslim's faith and practice."
+    );
   } else if (message.includes("open google")) {
     window.open("https://google.com", "_blank");
     speak("Opening Google...");
