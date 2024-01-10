@@ -17,16 +17,19 @@ function wishMe() {
 
   if (hour >= 0 && hour < 12) {
     speak("Good Morning Boss...");
-  } else if (hour > 12 && hour < 17) {
+  } else if (hour >= 12 && hour < 17) {
     speak("Good Afternoon Master...");
+  } else if (hour >= 17 && hour < 20) {
+    speak("Good Evening Sir...");
   } else {
-    speak("Good Evenining Sir...");
+    speak("Good Night Sir...");
   }
 }
 
 window.addEventListener("load", () => {
-  speak("Initializing Ayaan..");
-  wishMe();
+  // speak("Initializing Expo Assistant..");
+  // wishMe();
+  speak("hello");
 });
 
 const SpeechRecognition =
@@ -50,17 +53,61 @@ function takeCommand(message) {
   if (
     message.includes("hey") ||
     message.includes("hello") ||
-    message.includes("hi")
+    message.includes("hi") ||
+    message.includes("hai") ||
+    message.includes("hay") ||
+    message.includes("hayy")
   ) {
     speak("Hello Sir, How May I Help You?");
-  } else if (message.includes("ayaan")) {
+  } else if (message.includes("Assistant")) {
     speak("How may i help you sir?");
-  } else if (message.includes("who are you")) {
-    speak("My name is Ayaan. I am a virtual assistant.");
+  } else if (
+    message.includes(
+      "who are you" ||
+        "what is your name?" ||
+        "what's your name?" ||
+        "what's the name"
+    )
+  ) {
+    speak("I am Expo Assistant from Darul Huda Islamic University.");
   } else if (message.includes("salaam")) {
     speak("Waalaikumussalam, How may i help you sir?");
-  } else if (message.includes("salamu alaikum")) {
-    speak("Waalaikumussalam, How may i help you sir?");
+  } else if (
+    message.includes(
+      "salam" ||
+        "salaam" ||
+        "salam alaikum" ||
+        "salaam alaikum" ||
+        "salam alaykum" ||
+        "salaam alaykum" ||
+        "salam alaykum wa rahmatullah" ||
+        "salaam alaykum wa rahmatullah" ||
+        "salam alaykum wa rahmatullahi wa barakatuh" ||
+        "salaam alaykum wa rahmatullahi wa barakatuh" ||
+        "salam alaykum wa rahmatullahi wa barakatu" ||
+        "salaam alaykum wa rahmatullahi wa barakatu" ||
+        "salam alaykum wa rahmatullahi" ||
+        "salaam alaykum wa rahmatullahi" ||
+        "salam alaykum wa rahmatullah" ||
+        "salaam alaykum wa rahmatullah" ||
+        "salam alaykum wa rahmatullahi wa barakatuhu" ||
+        "salaam alaykum wa rahmatullahi wa barakatuhu" ||
+        "salam alaykum wa rahmatullahi wa barakatuh" ||
+        "salaam alaykum wa rahmatullahi wa barakatuh"
+    )
+  ) {
+    speak("Waalaikumussalam wa rahmathullah");
+  } else if (
+    message.includes(
+      "where are you now?" ||
+        "where are you?" ||
+        "where are you" ||
+        "where are you now"
+    )
+  ) {
+    speak("Now I am in Darul Huda Islamic University, Kerala, India.");
+  } else if (message.includes("how are you?" || "how are you")) {
+    speak("Alhamdu lillah, I am fine.");
   } else if (message.includes("open google")) {
     window.open("https://google.com", "_blank");
     speak("Opening Google...");
