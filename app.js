@@ -1,7 +1,7 @@
 const btn = document.querySelector(".talk");
+const icon = document.querySelector(".fa-microphone-alt");
 const content = document.querySelector(".content");
-
-
+const response = document.querySelector(".response");
 
 function speak(text) {
   const text_speak = new SpeechSynthesisUtterance(text);
@@ -10,8 +10,32 @@ function speak(text) {
   text_speak.volume = 1;
   text_speak.pitch = 1;
 
-  window.speechSynthesis.speak(text_speak);
+  // Play AI sound effect here (e.g., beep or any other sound)
+  playAISoundEffect(function() {
+    // Display the response text
+    response.textContent = text;
+
+    // Speak the provided text after the sound effect has completed
+    window.speechSynthesis.speak(text_speak);
+  });
 }
+
+// Function to play AI sound effect with a callback for completion
+function playAISoundEffect(callback) {
+  // Implement your AI sound effect logic here (e.g., play a beep sound)
+  // Example: You can use an HTML audio element to play a sound
+  const audio = new Audio("sound.mp3"); // Replace 'ai_sound.mp3' with your sound file
+
+  // Set up an event listener for the 'ended' event
+  audio.addEventListener('ended', function() {
+    // Call the callback function when the sound effect has completed
+    callback();
+  });
+
+  // Start playing the sound effect
+  audio.play();
+}
+
 
 function wishMe() {
   var day = new Date();
@@ -42,12 +66,18 @@ const recognition = new SpeechRecognition();
 recognition.onresult = (event) => {
   const currentIndex = event.resultIndex;
   const transcript = event.results[currentIndex][0].transcript;
-  content.textContent = transcript;
+  icon.style.color = "white";
+  // enable the button..
+  btn.disabled = false;
   takeCommand(transcript.toLowerCase());
 };
 
 btn.addEventListener("click", () => {
-  content.textContent = "Listening....";
+  // content.textContent = "Listening....";
+  // change the color of button to red..
+  icon.style.color = "red";
+  // disable the button..
+  btn.disabled = true;
   recognition.start();
 });
 
@@ -147,7 +177,10 @@ function takeCommand(message) {
     );
   } else if (
     message.includes(
-      "what is the meaning of Bismillah?" || "translate Bismillah"|| "translate bismillah." ||"Translate Bismillah"
+      "what is the meaning of Bismillah?" ||
+        "translate Bismillah" ||
+        "translate bismillah." ||
+        "Translate Bismillah"
     )
   ) {
     speak(

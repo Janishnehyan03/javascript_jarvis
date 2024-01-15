@@ -20,6 +20,19 @@
 
 .main .image-container {
   padding: 10px;
+  position: absolute;
+  /* put in the center of the screen */
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .main .image-container .image {
@@ -30,7 +43,7 @@
 }
 
 .main .image-container .image img {
-  width: 350px;
+  width: 300px;
   align-items: center;
 }
 
@@ -41,12 +54,6 @@
   font-size: 40px;
 }
 
-.main .image-container p {
-  color: #324042;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 .main .input {
   display: flex;
   justify-content: center;
@@ -54,10 +61,9 @@
   width: 40vw;
   height: 50px;
   border-radius: 20px;
-  background: rgb(202 253 255 / 50%);
 }
 
-.main .input .talk {
+.talk {
   background: transparent;
   outline: none;
   border: none;
@@ -68,18 +74,35 @@
   align-items: center;
   font-size: 15px;
   cursor: pointer;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.main .input .talk i {
-  font-size: 20px;
+.talk i {
+  font-size: 50px;
   color: #aed0d0;
-  margin-right: 3;
   background-color: #0b717f;
-  padding: 10px 15px;
-  border-radius: 30px;
+  padding: 45px 50px;
+  border-radius: 50%;
 }
-.main .input .content {
-  color: #aed0d0;
-  font-size: 15px;
-  margin-right: 20px;
+.response{
+  background-color: #ffffff19;
+  color: #ffffff98;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 10px;
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: 'sans-serif';  
 }
