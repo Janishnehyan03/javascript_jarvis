@@ -120,7 +120,7 @@ function takeCommand(message) {
         "what's the name"
     )
   ) {
-    speak("I am Expo Assistant from Darul Huda Islamic University.");
+    speak("I am DhExpo Assistant from Darul Huda Islamic University.");
   } else if (message.includes("salaam")) {
     speak("Waalaikumussalam, How may i help you sir?");
   } else if (
